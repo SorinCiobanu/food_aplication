@@ -1,0 +1,44 @@
+<script>
+
+    food_1_name = "Pizza"
+    food_1_price = 75.00
+    food_2_name = "Salad"
+    food_2_price = 25.00
+    food_3_name = "Kebab"
+    food_3_price = 40.00
+
+    alert(
+        "Menu:" +
+        "\n" + food_1_name + "    " + food_1_price.toFixed(2) + "$" +
+        "\n" + food_2_name + "    " + food_2_price.toFixed(2) + "$" +
+        "\n" + food_3_name + "    " + food_3_price.toFixed(2) + "$"
+    )
+
+    food_1_quantity = parseInt(prompt(`How many "${food_1_name}" do you want?`))
+    food_2_quantity = parseInt(prompt(`How many "${food_2_name}" do you want?`))
+    food_3_quantity = parseInt(prompt(`How many "${food_3_name}" do you want?`))
+
+    // ${identificator} afiseaza variabila introdusa anterior(mai sus)
+    // parseInt() introduce numarul care este interpretat ca text. 
+    // se aseamana cu livehackul pe care noi il faceam cu +promt().
+
+    cost_1    = food_1_price * food_1_quantity
+    cost_2    = food_2_price * food_2_quantity
+    cost_3    = food_3_price * food_3_quantity
+
+    totalCost = cost_1 + cost_2 + cost_3
+    freeDeliv = totalCost > 200
+
+    alert(
+        food_1_name + "  x  " + food_1_quantity + "  =  " + cost_1.toFixed(2) + "$" + "\n" +
+        food_2_name + "  x  " + food_2_quantity + "  =  " + cost_2.toFixed(2) + "$" + "\n" +
+        food_3_name + "  x  " + food_3_quantity + "  =  " + cost_3.toFixed(2) + "$" + "\n" +
+        
+        "-----------------------"                                                   + "\n" +
+        
+        "Total :  " + totalCost.toFixed(2) + "$"                                    + "\n" +
+        "Free Delivery =  " + "Total > 200.00$"                                     + "\n" +
+        "Free Delivery :  " + freeDeliv 
+    )
+
+</script>
