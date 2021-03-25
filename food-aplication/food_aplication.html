@@ -2,10 +2,13 @@
 
     food_1_name = "Pizza"
     food_1_price = 75.00
+    food_1_AvailQ = 5
     food_2_name = "Salad"
     food_2_price = 25.00
+    food_2_AvailQ = 7
     food_3_name = "Kebab"
     food_3_price = 40.00
+    food_3_AvailQ = 4
 
     alert(
         "Menu:" +
@@ -22,12 +25,26 @@
     // parseInt() introduce numarul care este interpretat ca text. 
     // se aseamana cu livehackul pe care noi il faceam cu +promt().
 
-    cost_1    = food_1_price * food_1_quantity
-    cost_2    = food_2_price * food_2_quantity
-    cost_3    = food_3_price * food_3_quantity
+    if ( food_1_AvailQ >= food_1_quantity ) {
+        cost_1 = food_1_price * food_1_quantity
+    } else {
+        alert("Sorry, we can offer only: " + food_1_AvailQ + " " + food_1_name)
+    }
+
+    if ( food_2_AvailQ >= food_2_quantity ) {
+        cost_2 = food_2_price * food_2_quantity
+    } else {
+        alert("Sorry, we can offer only: " + food_2_AvailQ + " " + food_2_name)
+    }
+
+    if ( food_3_AvailQ >= food_3_quantity ) {
+        cost_3 = food_3_price * food_3_quantity
+    } else {
+        alert("Sorry, we can offer only: " + food_3_AvailQ + " " + food_3_name)
+    }
 
     totalCost = cost_1 + cost_2 + cost_3
-    freeDeliv = totalCost > 200
+    //freeDeliv = totalCost > 200
 
     alert(
         food_1_name + "  x  " + food_1_quantity + "  =  " + cost_1.toFixed(2) + "$" + "\n" +
@@ -37,8 +54,14 @@
         "-----------------------"                                                   + "\n" +
         
         "Total :  " + totalCost.toFixed(2) + "$"                                    + "\n" +
-        "Free Delivery =  " + "Total > 200.00$"                                     + "\n" +
-        "Free Delivery :  " + freeDeliv 
+        "Free Delivery =  " + "Total > 300.00$"                                     
+        //"Free Delivery :  " + freeDeliv 
     )
+
+    if (totalCost >= 300) {
+        alert("Comanda dumneavoastra este gratuita!!!")
+    } else {
+        alert("Comanda dumneavoastra va costa 300.00$!!!")
+    }
 
 </script>
